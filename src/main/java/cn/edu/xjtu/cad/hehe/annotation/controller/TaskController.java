@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api/0.1/task")
 public class TaskController {
-    public boolean addTask(String taskName,String taskDesc,){
+    public boolean addTask(String taskName,String taskDesc){
 
+        return true;
     }
 
 }

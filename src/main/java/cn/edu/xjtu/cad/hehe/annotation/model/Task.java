@@ -1,29 +1,37 @@
 package cn.edu.xjtu.cad.hehe.annotation.model;
 
-import java.util.Date;
+import com.gitee.sunchenbin.mybatis.actable.annotation.Column;
+import com.gitee.sunchenbin.mybatis.actable.annotation.Table;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
 
+@Table(name="task")
 public class Task {
     /**
      * 任务ID
      */
+    @Column(name = "task_id",isKey = true,type= MySqlTypeConstant.BIGINT)
     long taskID;
     /**
      * 任务名称
      */
+    @Column(name="task_name",type=MySqlTypeConstant.VARCHAR)
     String taskName;
     /**
      * 任务描述
      */
+    @Column(name="task_desc",type=MySqlTypeConstant.TEXT)
     String taskDesc;
 
     /**
      * 任务分配的用户名
      */
+    @Column(name="username",type=MySqlTypeConstant.VARCHAR)
     String username;
 
     /**
      * 任务进度
      */
+    @Column(name="task_process",type=MySqlTypeConstant.DOUBLE)
     double taskProcess;
 
     public long getTaskID() {

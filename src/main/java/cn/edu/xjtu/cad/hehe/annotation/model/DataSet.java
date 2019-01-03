@@ -1,17 +1,31 @@
 package cn.edu.xjtu.cad.hehe.annotation.model;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.Column;
+import com.gitee.sunchenbin.mybatis.actable.annotation.Table;
+import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Table(name="data_set")
 public class DataSet {
+    @Column(name = "data_set_id",isKey = true,type= MySqlTypeConstant.BIGINT)
     long dataSetID;
+    @Column(name="data_set_name",type=MySqlTypeConstant.VARCHAR)
     String dataSetName;
+    @Column(name="data_set_desc",type=MySqlTypeConstant.TEXT)
     String dataSetDesc;
+    @Column(name="data_set_username",type=MySqlTypeConstant.VARCHAR)
     String dataSetUsername;
+    @Column(name="create_time",type=MySqlTypeConstant.DATETIME)
     Date createTime;
+    @Column(name="edit_time",type=MySqlTypeConstant.DATETIME)
     Date editTime;
+    @Column(name = "data_set_length",type= MySqlTypeConstant.BIGINT)
     long dataSetLength;
+
+    @Column(name = "data_set_type",type= MySqlTypeConstant.VARCHAR)
     DataSetType dataSetType;
 
     List<Data> dataList = new ArrayList<>();
